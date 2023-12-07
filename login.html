@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .login-container {
+      width: 300px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="login-form">
+      <input type="text" id="username" placeholder="Username" required><br>
+      <input type="password" id="password" placeholder="Password" required><br>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('login-form');
+    loginForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // You can add your login logic here, e.g., checking credentials and redirecting on success.
+      // For this example, we'll just show an alert.
+      if (username === 'yourUsername' && password === 'yourPassword') {
+        alert('Login successful');
+      } else {
+        alert('Login failed. Please check your credentials.');
+      }
+    });
+  </script>
+</body>
+
+</html>
+
+
+
+<!-- #include <stdio.h>
+  #include <stdlib.h>
+  #include "PPMTools.h" // Include the provided modules.
+  
+  // Function to perform color quantization based on the factor value.
+  void quantizeColor(PPMPixel *pixel, int factor) {
+      // Implement quantization logic based on the specified rules.
+      // Modify the pixel's RGB values accordingly.
+      // For example, if the factor is 4, use if-else conditions to quantize the color.
+  }
+  
+  int main() {
+      char inputFileName[256];
+      int factor;
+  
+      // Prompt the user for input values (image file name and factor value).
+  
+      // Read input image.
+      PPMImage inputImage = ReadPPM(inputFileName);
+  
+      // Create an output image with the same dimensions.
+      PPMImage outputImage = CreatePPM(inputImage.width, inputImage.height);
+  
+      // Initialize output image as white (255, 255, 255).
+  
+      // Iterate through each pixel in the input image.
+      for (int i = 0; i < inputImage.height; i++) {
+          for (int j = 0; j < inputImage.width; j++) {
+              PPMPixel *inputPixel = &inputImage.data[i * inputImage.width + j];
+              PPMPixel *outputPixel = &outputImage.data[i * inputImage.width + j];
+  
+              // Call the quantization function to quantize the color of the input pixel.
+              quantizeColor(inputPixel, factor);
+  
+              // Set the quantized color to the output image using PutRPixel, PutGPixel, and PutBPixel.
+              PutRPixel(outputPixel, inputPixel->r);
+              PutGPixel(outputPixel, inputPixel->g);
+              PutBPixel(outputPixel, inputPixel->b);
+          }
+      }
+  
+      // Write the output image to a file (out.ppm).
+      WritePPM("out.ppm", &outputImage);
+  
+      // Free memory allocated for images.
+  
+      return 0;
+  } -->
+  
